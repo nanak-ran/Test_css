@@ -1,0 +1,1131 @@
+@charset "UTF-8";
+@use "../global" as *;
+
+
+
+// --- メインビジュアル ---
+.main-visual {
+  width: 100%;
+  background-color: #fff;
+  position: relative;
+  
+  height: calc(100vh - 80px); 
+  overflow: hidden;
+
+  @include tab {
+    height: calc(100vh - 80px);
+  }
+
+  &__inner {
+    max-width: 75rem;
+    margin: 0 auto;
+    padding-inline: 1.25rem;
+    height: 100%;
+    position: relative;
+    z-index: 10;
+  }
+
+  &__content {
+    position: absolute;
+    left: 1.25rem;
+    
+    top: 10vh; 
+    z-index: 20;
+
+    @include tab {
+      top: 3vh; 
+    }
+
+    .main-visual__title {
+      font-weight: bold;
+      color: #333;
+
+      &--main, &--sub {
+        display: block;
+        font-size: 4rem;
+        line-height: 1.1; 
+
+        @include tab {
+          font-size: 2.2rem;
+        }
+
+        @include sp {
+          font-size: 1.8rem;
+        }
+      }
+
+      &--main {
+        margin-bottom: 3rem; 
+        text-shadow: 0.125rem 0.125rem 0.3rem rgba(0, 0, 0, 0.3); // 黒い影
+        @include sp {
+          margin-bottom: 2rem;
+        }
+      }
+
+      &--sub {
+        
+        text-shadow: 0 0 1.25rem #fff, 0 0 0.6rem #fff;
+      }
+    }
+
+    .main-visual__eng {
+      font-family: "EB Garamond", serif;
+      font-size: 1.6rem;
+      color: #fff;
+      font-style: italic;
+      margin-top: 3rem;
+      text-shadow: 0.125rem 0.125rem 0.5rem rgba(0, 0, 0, 0.8);
+
+      @include tab {
+        font-size: 1.2rem;
+        margin-top: 2rem;
+      }
+    }
+  }
+
+  &__img {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100vw;
+    
+    height: 70vh; 
+    z-index: 1;
+
+    @include tab {
+      height: 75vh; 
+    }
+
+    @include sp {
+      height: 78vh;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
+
+
+// --- NEWSセクション ---
+.top-news {
+  padding: 7.5rem 0;
+  background-color: #fff;
+
+  @include tab {
+    padding: 5.625rem 0; 
+  }
+
+  &__inner {
+    max-width: 87.5rem;
+    margin: 0 auto;
+    padding-inline: 1.25rem;
+
+    
+    .top-news__header {
+      max-width: 75rem;
+      margin: 0 auto 4rem;
+
+      .top-news__eng {
+        font-family: "EB Garamond", serif;
+        font-size: 3.5rem;
+
+        @include tab {
+          text-align: center;
+          font-size: 2.5rem; 
+        }
+      }
+
+      .top-news__jp {
+        font-size: 1.1rem;
+        font-weight: bold;
+
+        @include tab {
+          text-align: center;
+        }
+      }
+    }
+
+    
+    .top-news__tab-menu {
+      display: none;
+
+      @include tab {
+        display: flex;
+        gap: 2rem;
+        margin-bottom: 2rem;
+      }
+
+      .top-news__category-heading {
+        cursor: pointer;
+        padding-bottom: 1rem;
+        font-size: 1.1rem;
+        color: #999;
+        transition: all 0.3s;
+        position: relative;
+        border-bottom: 2px solid #999;
+
+        &.is-active {
+          color: #333;
+          border-bottom: 2px solid transparent;
+
+          &::after {
+            content: "";
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 4px; 
+            background-color: #333;
+          }
+        }
+      }
+    }
+
+    .top-news__flex-container {
+      display: flex;
+      gap: 4rem;
+
+      @include tab {
+        display: block;
+      }
+
+      .top-news__content {
+        flex: 1;
+        opacity: 0.5;
+        transition: opacity 0.3s;
+
+        &.is-active {
+          opacity: 1;
+        }
+
+        @include tab {
+          display: none;
+          opacity: 1;
+
+          &.is-active {
+            display: block;
+          }
+        }
+
+        .top-news__category-heading {
+          cursor: pointer;
+          display: block;
+          font-size: 1.5rem;
+          font-weight: bold;
+          color: #333;
+          margin-bottom: 2rem;
+          padding-bottom: 0.8rem;
+          border-bottom: 5px solid #999;
+          transition: all 0.3s;
+
+          &:hover {
+            border-bottom: 5px solid #333;
+          }
+
+          @include tab {
+            display: none;
+          }
+        }
+
+        .top-news__list {
+          list-style: none;
+          padding: 0;
+
+          &-item {
+            border-bottom: 1px solid #eee;
+
+            a {
+              display: flex;
+              align-items: center;
+              gap: 1.5rem;
+              padding: 1.5rem 0;
+              text-decoration: none;
+              color: #333;
+              transition: background-color 0.3s;
+
+              @include tab {
+                gap: 0.8rem; 
+                align-items: flex-start; 
+                padding: 1.25rem 0;
+              }
+
+              &:hover {
+                background-color: rgba(0, 0, 0, 0.02);
+              }
+
+              .date {
+                font-family: "EB Garamond", serif;
+                font-size: 1rem;
+                color: #333;
+                flex-shrink: 0; 
+                width: 4rem;    
+
+                @include tab {
+                  width: 4rem;
+                  font-size: 0.85rem;
+                }
+
+                
+              }
+
+              .category {
+                font-size: 0.9rem;
+                color: #888;
+                flex-shrink: 0; 
+                width: 7rem;  
+
+                @include tab {
+                  width: 6rem;
+                  font-size: 0.75rem;
+                }
+              }
+
+              .title {
+                font-size: 1rem;
+                line-height: 1.6;
+                flex: 1;        
+                
+                @include tab {
+                  font-size: 0.9rem;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    // View Allボタン
+    .top-news__more {
+      margin-top: 4rem;
+      text-align: center;
+
+      .btn-viewall {
+        display: inline-flex;
+        align-items: center;
+        gap: 1.5rem;
+        background-color: #000;
+        color: #fff;
+        padding: 0.8rem 2rem;   
+        border-radius: 0;       
+        font-family: "EB Garamond", serif;
+        font-size: 1.5rem;        
+        text-decoration: none;
+        transition: all 0.3s;
+        border: 1px solid #000;
+
+        @include tab {
+          font-size: 1.2rem; 
+          padding: 0.8rem 1.5rem;
+        }
+
+        &:hover {
+          background-color: #fff;
+          color: #000;
+
+          &::after {
+            transform: translateX(0.5rem);
+          }
+        }
+
+        &::after {
+          content: "→";
+          font-family: sans-serif;
+          font-size: 1.5rem;
+          transition: transform 0.3s;
+        }
+      }
+    }
+  }
+}
+
+// service
+.p-service {
+  padding: 4rem 0;
+  background-image: url("../img/top-servicebg.jpg"); 
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: cover;
+  // 背景画像がはみ出すのを防ぐ
+  overflow: hidden;
+
+  @include tab {
+    padding: 5.625rem 0;
+  }
+
+  &__inner {
+    
+    max-width: 75rem; 
+    margin: 0 auto;
+    padding-inline: 1.25rem;
+    width: 90%;
+
+    overflow: hidden;
+    position: relative;
+  }
+
+  // --- 見出し ---
+  &__header {
+    margin-bottom: 4rem;
+    text-align: left;
+
+    @include tab {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+  }
+
+  &__eng {
+    font-family: "EB Garamond", serif;
+    font-size: 3.5rem;
+    font-weight: bold;
+    color: #333;
+
+    @include tab {
+      font-size: 2.5rem;
+    }
+  }
+
+  &__jp {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #333;
+  }
+
+  
+  &__lead {
+    margin-bottom: 4rem;
+    font-size: 1.4rem;
+    line-height: 2;
+    text-align: center;
+    color: #333;
+    
+    max-width: 100%;
+    box-sizing: border-box;
+
+    @include tab {
+      font-size: 1rem;
+    }
+  }
+
+  
+  &__diagram {
+    max-width: 50rem;
+    margin: 0 auto;
+    width: 100%;
+    
+    img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+  }
+
+
+  &__decor-arrows {
+    margin: 4rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+
+    .arrow-item {
+      width: 0;
+      height: 0;
+      
+      border-left: 50px solid transparent;
+      border-right: 50px solid transparent;
+      border-top: 50px solid #333;
+      display: block;
+      margin-top: -12px;
+
+      &:first-child {
+        margin-top: 0;
+      }
+      &:nth-child(2) {
+        opacity: 0.7;
+      }
+      &:nth-child(3) {
+        opacity: 0.4;
+      }
+    }
+  }
+
+  
+  &__link-area {
+    margin-bottom: 4rem;
+    text-align: center;
+    width: 100%;
+  }
+
+  &__link-text {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+
+    @include tab {
+      font-size: 1.5rem;
+    }
+  }
+
+  
+  &__cards {
+    display: flex;
+    justify-content: center;
+    gap: 4rem; 
+    width: 100%;
+    
+    max-width: 100%;
+
+    @include tab {
+      flex-direction: column;
+      align-items: center;
+      gap: 3rem;
+    }
+  }
+
+  &__card {
+    
+    flex: 0 1 31.25rem; 
+    width: 100%;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+
+    @include tab {
+      flex: none;
+      max-width: 100%;
+    }
+
+    &-img {
+      width: 100%;
+      
+      aspect-ratio: 4 / 3; 
+      overflow: hidden;
+      
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    &-body {
+      padding: 3rem 2rem; 
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+
+      @include tab {
+        padding: 2.5rem 1.5rem;
+      }
+    }
+
+    &-title {
+      font-size: 1.4rem;
+      font-weight: bold;
+      margin-bottom: 2rem;
+      display: flex;
+      align-items: center;
+      line-height: 1.4;
+      justify-content: center;
+
+
+      @include tab {
+        font-size: 1.1rem;
+      }
+    }
+
+    &-text {
+      font-size: 0.95rem;
+      line-height: 1.8;
+      color: #666;
+    }
+
+    &.is-dark {
+      background-color: #333;
+      .p-service__card-title { color: #fff; }
+      .p-service__card-text { color: #ccc; }
+    }
+  }
+
+  
+  &__more {
+    margin-top: 6rem;
+    text-align: center;
+
+    .btn-viewall {
+        display: inline-flex;
+        align-items: center;
+        gap: 1.5rem;
+        background-color: #000;
+        color: #fff;
+        padding: 0.8rem 2rem;   
+        border-radius: 0;       
+        font-family: "EB Garamond", serif;
+        font-size: 1.5rem;        
+        text-decoration: none;
+        transition: all 0.3s;
+        border: 1px solid #000;
+
+        @include tab {
+          font-size: 1.2rem; 
+          padding: 0.8rem 1.5rem;
+        }
+
+      &:hover {
+        background-color: #fff;
+        color: #000;
+        &::after {
+          transform: translateX(0.5rem);
+        }
+      }
+
+      &::after {
+        content: "→";
+        font-size: 1.5rem;
+        transition: transform 0.3s;
+      }
+    }
+  }
+}
+
+// works
+.p-works {
+
+  padding: 7.5rem 0;
+  background-color: #fff;
+  
+  overflow: hidden;
+
+  @include tab {
+    
+    padding: 5rem 0;
+  }
+
+  &__inner {
+    
+    max-width: 75rem;
+    margin-inline: auto;
+    padding-inline: 1.25rem;
+    width: 90%;
+  }
+
+  &__header {
+    margin-bottom: 4rem;
+    text-align: left;
+
+    @include tab {
+      text-align: center;
+    }
+  }
+
+  &__eng {
+    font-family: "EB Garamond", serif;
+    font-size: 3.5rem;
+    font-weight: bold;
+    color: #333;
+
+    @include tab {
+      font-size: 2.5rem;
+    }
+  }
+
+  &__jp {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #333;
+  }
+
+  
+  &__slider {
+    width: 100%;
+    margin-top: 4rem;
+    position: relative;
+  }
+
+  &__track {
+    display: flex;
+    width: max-content;
+    
+    animation: infinity-loop 40s linear infinite;
+
+    &:hover {
+      
+      animation-play-state: paused;
+    }
+  }
+
+  &__list {
+    display: flex;
+    gap: 2.5rem;
+    padding-left: 2.5rem;
+
+    @include tab {
+      
+      gap: 1.25rem;
+      padding-left: 1.25rem;
+    }
+  }
+
+  
+  &__item {
+    
+    width: 23.75rem;
+    background-color: #fff;
+    
+    box-shadow: none; 
+    transition: transform 0.3s ease;
+
+    @include tab {
+      
+      width: 80vw;
+      max-width: 20rem;
+    }
+
+    &:hover {
+      
+      transform: translateY(-5px);
+    }
+
+    &-img {
+      width: 100%;
+      aspect-ratio: 3 / 2;
+      overflow: hidden;
+
+      a {
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+
+        &:hover {
+          
+          transform: scale(1.05);
+        }
+      }
+    }
+
+    &-body {
+      padding: 1rem;
+      text-align: center;
+
+      @include tab {
+        padding: 0.5rem;
+      }
+    }
+
+    &-title {
+      font-size: 1.1rem;
+      font-weight: bold;
+      color: #333;
+      margin-bottom: 0.5rem;
+      line-height: 1.4;
+
+      @include tab {
+        font-size: 1rem;
+      }
+    }
+
+    &-client {
+      font-size: 0.9rem;
+      color: #333;
+    }
+
+    &-category {
+      font-size: 0.8rem;
+      color: #999;
+      display: inline-block;
+      text-decoration: none;
+      transition: color 0.3s;
+
+      &:hover {
+        color: #333;
+        text-decoration: underline;
+      }
+    }
+  }
+
+  
+  &__more {
+    margin-top: 6rem;
+    text-align: center;
+
+    .btn-viewall {
+        display: inline-flex;
+        align-items: center;
+        gap: 1.5rem;
+        background-color: #000;
+        color: #fff;
+        padding: 0.8rem 2rem;   
+        border-radius: 0;       
+        font-family: "EB Garamond", serif;
+        font-size: 1.5rem;        
+        text-decoration: none;
+        transition: all 0.3s;
+        border: 1px solid #000;
+
+        @include tab {
+          font-size: 1.2rem; 
+          padding: 0.8rem 1.5rem;
+        }
+
+      &:hover {
+        background-color: #fff;
+        color: #000;
+
+        &::after {
+          transform: translateX(0.5rem);
+        }
+      }
+
+      &::after {
+        content: "→";
+        font-family: sans-serif;
+        font-size: 1.5rem;
+        transition: transform 0.3s ease;
+      }
+
+      @include tab {
+        font-size: 1.5rem;
+        padding: 0.6rem 3rem;
+      }
+    }
+  }
+}
+
+
+@keyframes infinity-loop {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+
+// company
+.p-company {
+  
+  padding: 0 0 7.5rem 0;
+  background-color: #fff;
+
+  &__inner {
+    
+    width: 90%;
+    max-width: 75rem; // 1200px
+    margin-inline: auto;
+  }
+
+  &__header {
+    margin-bottom: 5rem;
+    text-align: left;
+
+    @include tab {
+      text-align: center;
+      margin-bottom: 3.5rem;
+    }
+  }
+
+  &__eng {
+    font-family: "EB Garamond", serif;
+    font-size: 3.5rem;
+    font-weight: bold;
+    color: #333;
+    line-height: 1;
+
+    @include tab {
+      font-size: 2.5rem;
+    }
+  }
+
+  &__jp {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #333;
+  }
+
+ 
+  &__contents {
+    display: flex;
+    align-items: center; 
+    justify-content: space-between;
+    gap: 5rem; 
+
+    @include tab {
+      flex-direction: column; 
+      gap: 3rem;
+    }
+  }
+
+  
+  &__img {
+    flex: 1;
+    width: 100%;
+    
+    img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      
+    }
+  }
+
+  
+  &__body {
+    flex: 1;
+    width: 100%;
+    text-align: left;
+
+    @include tab {
+      text-align: center;
+    }
+  }
+
+  &__title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 2rem;
+    position: relative;
+    padding-bottom: 1.5rem;
+    
+    text-align: center;
+
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      
+      left: 50%;
+      
+      transform: translateX(-50%);
+      
+      width: 6rem;
+      height: 2px;
+      background-color: #333;
+    }
+
+    @include tab {
+      font-size: 1.6rem;
+      
+      text-align: center;
+    }
+  }
+
+  &__text {
+    font-size: 1.1rem;
+    line-height: 2; 
+    color: #333;
+    text-align: justify; 
+
+    @include tab {
+      text-align: left;
+      font-size: 1rem;
+    }
+  }
+
+  
+  &__more {
+    margin-top: 5rem;
+    text-align: center;
+
+    .btn-viewmore {
+      display: inline-flex;
+      align-items: center;
+      gap: 1.5rem;
+      background-color: #000;
+      color: #fff;
+      
+      padding: 0.8rem 2rem;
+      font-size: 1.5rem;
+      font-family: "EB Garamond", serif;
+      text-decoration: none;
+      border: 1px solid #000;
+      transition: all 0.3s ease;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #fff;
+        color: #000;
+
+        &::after {
+          transform: translateX(0.5rem);
+        }
+      }
+
+      &::after {
+        content: "→";
+        font-family: sans-serif;
+        font-size: 1.5rem;
+        transition: transform 0.3s ease;
+      }
+
+      @include tab {
+        
+        font-size: 1.2rem;
+        padding: 0.8rem 1.5rem;
+      }
+    }
+  }
+}
+
+
+// contact
+.p-contact {
+  
+  width: 100%;
+  padding: 4rem 0;
+  background-image: url("../img/top-contact.jpg"); 
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  
+
+  &__inner {
+    
+    width: 90%;
+    max-width: 87.5rem; 
+    margin-inline: auto;
+  }
+
+  
+  &__box {
+    background-color: rgba(255, 255, 255, 0.85); 
+    padding: 4rem 2rem;
+    text-align: center;
+    
+    border: 1px solid rgba(255, 255, 255, 0.3);
+
+    @include tab {
+      padding: 2rem 1.5rem;
+    }
+  }
+
+  &__header {
+    margin-bottom: 3rem;
+  }
+
+  &__eng {
+    font-family: "EB Garamond", serif;
+    font-size: 3.5rem;
+    font-weight: bold;
+    color: #000;
+    line-height: 1;
+
+    @include tab {
+      font-size: 2.5rem;
+    }
+  }
+
+  &__jp {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #000;
+  }
+
+  &__body {
+    margin-bottom: 4rem;
+  }
+
+  &__text {
+    font-size: 1.25rem;
+    line-height: 2;
+    color: #333;
+    font-weight: 500;
+
+    @include tab {
+      font-size: 1rem;
+      br {
+        display: none; 
+      }
+    }
+  }
+
+  
+  &__link {
+    a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      background-color: #000;
+      color: #fff;
+      
+      padding: 1.25rem 3rem;
+      text-decoration: none;
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+      border: 0.06rem solid #000;
+      font-size: 1.2rem;
+      line-height: 1;
+      transition: color 0.5s;
+      white-space: nowrap;
+
+      @include tab {
+        font-size: 1rem;
+        padding: 1rem;
+        width: 90%; 
+        max-width: 25rem;
+      }
+
+      
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #fff;
+        transform: scaleY(0);
+        transform-origin: center;
+        transition: transform 0.5s;
+        z-index: -1;
+      }
+
+      &:hover {
+        color: #000;
+        &::before {
+          transform: scaleY(1);
+        }
+      }
+
+      
+      i {
+        font-size: 1.5rem;
+        display: flex;
+        align-items: center;
+      }
+    }
+  }
+}
+
+
+.u-fade-up {
+  opacity: 0;
+  transform: translateY(3rem); /* 48px分下に下げておく */
+  transition: opacity 1s, transform 1s; /* 1秒かけて変化 */
+}
+
+
+.u-fade-up.is-show {
+  opacity: 1;
+  transform: translateY(0);
+}

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>YC | Your Consult</title> <link rel="icon" href="img/favicon.png"> <link rel="apple-touch-icon" href="img/favicon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Noto+Serif+JP:wght@200..900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+
+  <header class="header" id="header">
+  <div class="header-wrap">
+    <h1 class="header-wrap__logo">
+      <a href="index.html">
+        <img src="img/logo.png" alt="ロゴ">
+      </a>
+    </h1>
+
+    <div class="header-wrap__nav-wrapper">
+
+      <div class="header-wrap__nav-logo">
+        <a href="index.html">
+          <img src="img/logo.png" alt="ロゴ">
+        </a>
+      </div>
+
+      <nav class="header-wrap__nav">
+        <ul class="header-wrap__list">
+          <li class="header-wrap__item"><a href="company.html">企業情報</a></li>
+          <li class="header-wrap__item"><a href="service.html">事業概要</a></li>
+          <li class="header-wrap__item"><a href="works.html">導入事例</a></li>
+          <li class="header-wrap__item"><a href="news.html">お知らせ</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-wrap__contact">
+        <a href="contact.html">
+          <i class="fa-regular fa-envelope"></i>
+          <span class="contact-text">お問い合わせ</span>
+        </a>
+      </div>
+    </div> <button class="toggle_btn" id="js-hamburger">
+      <span></span>
+      <span></span>
+    </button>
+    
+  </div>
+</header>
+
+<main>
+  <section class="page-header">
+    <div class="page-header__inner">
+      <div class="page-header__title-set">
+        <h2 class="page-header__eng">CONTACT</h2>
+        <p class="page-header__jp">お問い合わせ</p>
+      </div>
+      <nav class="breadcrumb" aria-label="パンくずリスト">
+        <ul class="breadcrumb__list">
+          <li class="breadcrumb__item">
+            <a href="index.html">TOP</a>
+          </li>
+          <li class="breadcrumb__item">
+            <span>お問い合わせ</span>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </section>
+
+  <section class="contact-section">
+    <div class="contact-section__inner">
+      <p class="contact-section__lead">
+        以下フォームをご記入の上、[入力内容を確認する]をクリックしてください。<br>
+        お問い合わせ内容を確認後、担当者よりご連絡させていただきます。
+      </p>
+
+      <form action="#" method="post" class="contact-form">
+        <dl class="contact-form__list">
+          <div class="contact-form__item">
+            <dt><label for="company">会社名</label></dt>
+            <dd><input type="text" name="company" id="company" placeholder="全角でご入力ください"></dd>
+          </div>
+
+          <div class="contact-form__item">
+            <dt><label for="name">お名前<span class="required">必須</span></label></dt>
+            <dd><input type="text" name="name" id="name" placeholder="全角でご入力ください" required></dd>
+          </div>
+
+          <div class="contact-form__item">
+            <dt><label for="kana">フリガナ<span class="required">必須</span></label></dt>
+            <dd><input type="text" name="kana" id="kana" placeholder="全角でご入力ください" required></dd>
+          </div>
+
+          <div class="contact-form__item">
+            <dt><label for="tel">電話番号</label></dt>
+            <dd><input type="tel" name="tel" id="tel" placeholder="半角英数字でご入力ください"></dd>
+          </div>
+
+          <div class="contact-form__item">
+            <dt><label for="email">メールアドレス<span class="required">必須</span></label></dt>
+            <dd><input type="email" name="email" id="email" placeholder="半角英数字でご入力ください" required></dd>
+          </div>
+
+          <div class="contact-form__item">
+            <dt><label for="email-confirm">メールアドレス(確認用)<span class="required">必須</span></label></dt>
+            <dd><input type="email" name="email-confirm" id="email-confirm" placeholder="半角英数字でご入力ください" required></dd>
+          </div>
+
+          <div class="contact-form__item">
+            <dt><label for="message">お問い合わせ内容<span class="required">必須</span></label></dt>
+            <dd><textarea name="message" id="message" placeholder="お問い合わせの具体的な内容をご入力ください。" required></textarea></dd>
+          </div>
+        </dl>
+
+        <div class="contact-form__submit">
+          <button type="submit">送信する</button>
+        </div>
+      </form>
+    </div>
+  </section>
+</main>
+
+
+<footer class="footer">
+  <div class="footer-wrap">
+    <div class="footer-left">
+      <div class="footer-left__inner">
+        <p class="footer-info">
+          〒000-0000<br>
+          福岡県福岡市123番地45<br>
+          TEL:0000-00-0000／FAX:0000-00-0000
+        </p>
+
+        <div class="footer-logo-set">
+          <div class="footer-logo">
+            <a href="index.html">
+              <img src="img/logo.png" alt="株式会社 Your Consult">
+            </a>
+          </div>
+          <div class="footer-company-info">
+            <span class="footer-company-name">株式会社 Your Consult</span>
+            <div class="footer-sns">
+              <a href="#"><i class="fa-brands fa-instagram"></i></a>
+              <a href="#"><i class="fa-brands fa-facebook"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-right">
+      <div class="footer-right__inner">
+        <div class="footer-nav">
+          <div class="footer-nav__group">
+            <a href="service.html" class="footer-nav__ttl">事業概要</a>
+            <ul class="footer-nav__list --dot">
+              <li><a href="#">経営戦略コンサルティング</a></li>
+              <li><a href="#">DX推進支援</a></li>
+            </ul>
+          </div>
+          <div class="footer-nav__group">
+            <ul class="footer-nav__list">
+              <li><a href="company.html">会社概要</a></li>
+              <li><a href="works.html">導入事例</a></li>
+              <li><a href="news.html">お知らせ</a></li>
+              <li><a href="contact.html">お問い合わせ</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <p class="copyright">&copy; Your Consult</p>
+</footer>
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script type="text/javascript" src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>YC | Your Consult</title> <link rel="icon" href="img/favicon.png"> <link rel="apple-touch-icon" href="img/favicon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Noto+Serif+JP:wght@200..900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+
+  <header class="header" id="header">
+  <div class="header-wrap">
+    <h1 class="header-wrap__logo">
+      <a href="index.html">
+        <img src="img/logo.png" alt="ロゴ">
+      </a>
+    </h1>
+
+    <div class="header-wrap__nav-wrapper">
+
+      <div class="header-wrap__nav-logo">
+        <a href="index.html">
+          <img src="img/logo.png" alt="ロゴ">
+        </a>
+      </div>
+
+      <nav class="header-wrap__nav">
+        <ul class="header-wrap__list">
+          <li class="header-wrap__item"><a href="company.html">企業情報</a></li>
+          <li class="header-wrap__item"><a href="service.html">事業概要</a></li>
+          <li class="header-wrap__item"><a href="works.html">導入事例</a></li>
+          <li class="header-wrap__item"><a href="news.html">お知らせ</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-wrap__contact">
+        <a href="contact.html">
+          <i class="fa-regular fa-envelope"></i>
+          <span class="contact-text">お問い合わせ</span>
+        </a>
+      </div>
+    </div> <button class="toggle_btn" id="js-hamburger">
+      <span></span>
+      <span></span>
+    </button>
+    
+  </div>
+</header>
+
+<main>
+
+    <section class="p-lower-header">
+  <div class="p-lower-header__inner">
+    <div class="p-lower-header__title-set">
+      <h2 class="p-lower-header__eng">WORKS</h2>
+      <p class="p-lower-header__jp">導入事例</p>
+    </div>
+    <nav class="breadcrumb" aria-label="パンくずリスト">
+      <ul class="breadcrumb__list">
+        <li class="breadcrumb__item">
+          <a href="index.html">TOP</a>
+        </li>
+        <li class="breadcrumb__item">
+          <span>導入事例</span>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</section>
+
+<div class="p-lower-visual">
+  <div class="p-lower-visual__img">
+    <img src="img/worksfv.jpg" alt="導入事例メインビジュアル">
+  </div>
+</div>
+
+<section class="p-works-list">
+  <div class="p-works-list__inner">
+    
+    <div class="p-works-list__category">
+      <h3 class="p-works-list__category-title">Category<span>（カテゴリーから探す）</span></h3>
+      <ul class="p-works-list__category-buttons">
+        <li class="p-works-list__category-item"><a href="#all" class="is-active">すべて</a></li>
+        <li class="p-works-list__category-item"><a href="#strategy">経営戦略コンサルティング</a></li>
+        <li class="p-works-list__category-item"><a href="#dx">DX推進支援</a></li>
+      </ul>
+    </div>
+
+    <div id="all">
+      
+      <div id="strategy" class="p-works-list__section">
+        <h3 class="p-works-list__section-title">経営戦略コンサルティング</h3>
+        
+        <article id="top-works02" class="p-works-list__card">
+          <div class="p-works-list__card-img">
+            <img src="img/top-works02.jpg" alt="">
+          </div>
+          <div class="p-works-list__card-body">
+            <h4 class="p-works-list__card-title">中期経営計画策定支援</h4>
+            <p class="p-works-list__card-client">株式会社テスト 様</p>
+            <p class="p-works-list__card-text">
+              現状の市場分析から3年後の目指すべき姿を定義し、全社員が共通認識を持てる具体的なロードマップを策定しました。また、次世代を担うリーダー層への個別メンタリングと、新規事業立案ワークショップを半年間にわたり実施し、戦略の実行までを伴走サポートしました。
+            </p>
+            <a href="#strategy" class="p-works-list__card-tag">#経営戦略コンサルティング</a>
+          </div>
+        </article>
+
+        <article id="top-works04" class="p-works-list__card">
+          <div class="p-works-list__card-img">
+            <img src="img/top-works04.jpg" alt="">
+          </div>
+          <div class="p-works-list__card-body">
+            <h4 class="p-works-list__card-title">新規事業立案コンサル</h4>
+            <p class="p-works-list__card-client">株式会社test 様</p>
+            <p class="p-works-list__card-text">
+              既存の顧客基盤を活かしたサブスクリプション型サービスを立案。市場調査から競合分析、価格設定、プロモーション戦略までを一貫してサポートしました。特にWebマーケティングの強化に注力し、リリースからわずか半年で当初目標の120%となる会員数を獲得に至りました。
+            </p>
+            <a href="#strategy" class="p-works-list__card-tag">#経営戦略コンサルティング</a>
+          </div>
+        </article>
+
+        <article id="top-works05" class="p-works-list__card">
+          <div class="p-works-list__card-img">
+            <img src="img/top-works05.jpg" alt="">
+          </div>
+          <div class="p-works-list__card-body">
+            <h4 class="p-works-list__card-title">中期経営計画の策定</h4>
+            <p class="p-works-list__card-client">株式会社T 様</p>
+            <p class="p-works-list__card-text">
+              収益性が低下していた既存事業のコスト構造を抜本的に見直し。不採算部門の整理とリソースの集中投下を行う「3か年中期経営計画」を策定。単なる計画策定に留まらず、現場のリーダー育成や評価制度の再設計まで伴走。導入1年目で営業利益率が5%改善し、V字回復の基盤を構築しました。
+            </p>
+            <a href="#strategy" class="p-works-list__card-tag">#経営戦略コンサルティング</a>
+          </div>
+        </article>
+      </div>
+
+      <div id="dx" class="p-works-list__section">
+        <h3 class="p-works-list__section-title">DX推進支援</h3>
+        
+        <article id="top-works03" class="p-works-list__card">
+          <div class="p-works-list__card-img">
+            <img src="img/top-works03.jpg" alt="">
+          </div>
+          <div class="p-works-list__card-body">
+            <h4 class="p-works-list__card-title">システム刷新に伴うDX推進</h4>
+            <p class="p-works-list__card-client">○○株式会社 様</p>
+            <p class="p-works-list__card-text">
+              部署間で分断されていた顧客・在庫データをクラウド上で一元管理する新システムを導入。ITリテラシーに合わせた操作マニュアルの作成と導入研修を徹底し、スムーズな移行を実現。結果として、月間合計40時間の業務削減とリアルタイムでの経営判断を可能にしました。
+            </p>
+            <a href="#dx" class="p-works-list__card-tag">#DX推進支援</a>
+          </div>
+        </article>
+
+        <article id="top-works01" class="p-works-list__card">
+          <div class="p-works-list__card-img">
+            <img src="img/top-works01.jpg" alt="">
+          </div>
+          <div class="p-works-list__card-body">
+            <h4 class="p-works-list__card-title">データ活用による顧客体験の最適化</h4>
+            <p class="p-works-list__card-client">○○株式会社 様</p>
+            <p class="p-works-list__card-text">
+              これまで活用しきれていなかった顧客購入データを統合し、AIによる行動分析ツールを導入。個々のお客様に合わせたパーソナライズ・メールなどを自動化しました。デジタルを活用した接点強化により、ECサイトのリピート率が従来比1.5倍に向上しました。
+            </p>
+            <a href="#dx" class="p-works-list__card-tag">#DX推進支援</a>
+          </div>
+        </article>
+      </div>
+
+    </div>
+</div>
+</section>
+
+
+
+  
+</main>
+
+
+
+<footer class="footer">
+  <div class="footer-wrap">
+    <div class="footer-left">
+      <div class="footer-left__inner">
+        <p class="footer-info">
+          〒000-0000<br>
+          福岡県福岡市123番地45<br>
+          TEL:0000-00-0000／FAX:0000-00-0000
+        </p>
+
+        <div class="footer-logo-set">
+          <div class="footer-logo">
+            <a href="index.html">
+              <img src="img/logo.png" alt="株式会社 Your Consult">
+            </a>
+          </div>
+          <div class="footer-company-info">
+            <span class="footer-company-name">株式会社 Your Consult</span>
+            <div class="footer-sns">
+              <a href="#"><i class="fa-brands fa-instagram"></i></a>
+              <a href="#"><i class="fa-brands fa-facebook"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-right">
+      <div class="footer-right__inner">
+        <div class="footer-nav">
+          <div class="footer-nav__group">
+            <a href="service.html" class="footer-nav__ttl">事業概要</a>
+            <ul class="footer-nav__list --dot">
+              <li><a href="#">経営戦略コンサルティング</a></li>
+              <li><a href="#">DX推進支援</a></li>
+            </ul>
+          </div>
+          <div class="footer-nav__group">
+            <ul class="footer-nav__list">
+              <li><a href="company.html">会社概要</a></li>
+              <li><a href="works.html">導入事例</a></li>
+              <li><a href="news.html">お知らせ</a></li>
+              <li><a href="contact.html">お問い合わせ</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <p class="copyright">&copy; Your Consult</p>
+</footer>
+
+
+
+
+
+
+
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script type="text/javascript" src="js/main.js"></script>
+</body>
+</html>
