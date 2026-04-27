@@ -3,15 +3,14 @@
 
 .page-header {
 
-  padding-top: 2rem;
+  padding-top: 5rem;
+
+  @include tab {
+    padding-top: 3rem;
+  }
   
-
-  // @include tab {
-  //   padding-top: 2rem;
-  // }
-
   &__inner {
-    max-width: 87.5rem; 
+    max-width: 65.625rem; 
     margin: 0 auto;
     padding-inline: 1.25rem;
     display: flex;
@@ -103,7 +102,7 @@
   }
 
   &__inner {
-    max-width: 87.5rem; 
+    max-width: 65.625rem; 
     margin: 0 auto;
     padding-inline: 1.25rem;
 
@@ -120,8 +119,6 @@
         padding-bottom: 1.5rem;
         font-size: 1.25rem;
         color: #333;
-        
-        
         border-bottom: 5px solid transparent; 
         
         position: relative;
@@ -203,6 +200,7 @@
             gap: 1rem;
             align-items: flex-start;
             padding: 1.5rem 0;
+            // flex-wrap: wrap;
           }
 
           &:hover {
@@ -223,7 +221,7 @@
             }
 
             @include tab {
-              width: 3rem;
+              width: 4rem;
               font-size: 0.85rem;
               white-space: normal;
               

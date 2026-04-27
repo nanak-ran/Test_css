@@ -2,22 +2,20 @@
 @use "../global" as *;
 
 
-
 // --- メインビジュアル ---
 .main-visual {
   width: 100%;
   background-color: #fff;
   position: relative;
-  
-  height: calc(100vh - 80px); 
+  height: calc(95vh - 6.25rem); 
   overflow: hidden;
 
   @include tab {
-    height: calc(100vh - 80px);
+    height: calc(95vh - 6.25rem);
   }
 
   &__inner {
-    max-width: 75rem;
+    max-width: 56.25rem;
     margin: 0 auto;
     padding-inline: 1.25rem;
     height: 100%;
@@ -28,21 +26,20 @@
   &__content {
     position: absolute;
     left: 1.25rem;
-    
-    top: 10vh; 
+    top: 8vh; 
     z-index: 20;
 
     @include tab {
-      top: 3vh; 
+      top: 5vh; 
     }
 
     .main-visual__title {
       font-weight: bold;
-      color: #333;
+      color: $color-text;
 
       &--main, &--sub {
         display: block;
-        font-size: 4rem;
+        font-size: 3.5rem;
         line-height: 1.1; 
 
         @include tab {
@@ -56,23 +53,21 @@
 
       &--main {
         margin-bottom: 3rem; 
-        text-shadow: 0.125rem 0.125rem 0.3rem rgba(0, 0, 0, 0.3); // 黒い影
+        text-shadow: 0.125rem 0.125rem 0.3rem rgba(0, 0, 0, 0.3);
         @include sp {
           margin-bottom: 2rem;
         }
       }
 
       &--sub {
-        
         text-shadow: 0 0 1.25rem #fff, 0 0 0.6rem #fff;
       }
     }
 
     .main-visual__eng {
-      font-family: "EB Garamond", serif;
+      font-family: $font-heading;
       font-size: 1.6rem;
       color: #fff;
-      font-style: italic;
       margin-top: 3rem;
       text-shadow: 0.125rem 0.125rem 0.5rem rgba(0, 0, 0, 0.8);
 
@@ -89,16 +84,15 @@
     left: 50%;
     transform: translateX(-50%);
     width: 100vw;
-    
-    height: 70vh; 
+    height: 67vh; 
     z-index: 1;
 
     @include tab {
-      height: 75vh; 
+      height: 70vh; 
     }
 
     @include sp {
-      height: 78vh;
+      height: 75vh;
     }
 
     img {
@@ -106,6 +100,7 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
+      vertical-align: bottom;
     }
   }
 }
@@ -121,28 +116,33 @@
   }
 
   &__inner {
-    max-width: 87.5rem;
+    // max-width: 56.25rem;
     margin: 0 auto;
     padding-inline: 1.25rem;
 
-    
     .top-news__header {
-      max-width: 75rem;
+      max-width: 56.25rem;
       margin: 0 auto 4rem;
 
+      @include tab {
+        margin-bottom: 3rem;
+      }
+
       .top-news__eng {
-        font-family: "EB Garamond", serif;
+        font-family: $font-heading;
         font-size: 3.5rem;
+        color: $color-header;
 
         @include tab {
           text-align: center;
-          font-size: 2.5rem; 
+          font-size: 2.5rem;
         }
       }
 
       .top-news__jp {
         font-size: 1.1rem;
         font-weight: bold;
+        color: $color-header;
 
         @include tab {
           text-align: center;
@@ -150,7 +150,7 @@
       }
     }
 
-    
+    // newsトピックスとカテゴリ
     .top-news__tab-menu {
       display: none;
 
@@ -186,7 +186,10 @@
       }
     }
 
+    // newsコンテナ全体
     .top-news__flex-container {
+      max-width: 65.625rem;
+      margin: 0 auto;
       display: flex;
       gap: 4rem;
 
@@ -259,9 +262,9 @@
               }
 
               .date {
-                font-family: "EB Garamond", serif;
+                font-family: $font-heading;
                 font-size: 1rem;
-                color: #333;
+                color: $color-text;
                 flex-shrink: 0; 
                 width: 4rem;    
 
@@ -269,15 +272,15 @@
                   width: 4rem;
                   font-size: 0.85rem;
                 }
-
-                
               }
 
               .category {
                 font-size: 0.9rem;
                 color: #888;
                 flex-shrink: 0; 
-                width: 7rem;  
+                width: 7rem; 
+                border-bottom: solid 1px #888;
+                text-align: center;
 
                 @include tab {
                   width: 6rem;
@@ -344,6 +347,7 @@
   }
 }
 
+
 // service
 .p-service {
   padding: 4rem 0;
@@ -351,28 +355,24 @@
   background-repeat: no-repeat;
   background-position: center top;
   background-size: cover;
-  // 背景画像がはみ出すのを防ぐ
   overflow: hidden;
 
   @include tab {
-    padding: 5.625rem 0;
+    padding: 3rem 0;
   }
 
   &__inner {
-    
-    max-width: 75rem; 
+    max-width: 56.625rem; 
     margin: 0 auto;
     padding-inline: 1.25rem;
-    width: 90%;
-
+    // width: 90%;
     overflow: hidden;
     position: relative;
   }
 
   // --- 見出し ---
   &__header {
-    margin-bottom: 4rem;
-    text-align: left;
+    margin: 0 auto 4rem;
 
     @include tab {
       text-align: center;
@@ -381,10 +381,10 @@
   }
 
   &__eng {
-    font-family: "EB Garamond", serif;
+    font-family: $font-heading;
     font-size: 3.5rem;
     font-weight: bold;
-    color: #333;
+    color: $color-header;
 
     @include tab {
       font-size: 2.5rem;
@@ -394,7 +394,7 @@
   &__jp {
     font-size: 1.1rem;
     font-weight: bold;
-    color: #333;
+    color: $color-header;
   }
 
   
@@ -403,19 +403,20 @@
     font-size: 1.4rem;
     line-height: 2;
     text-align: center;
-    color: #333;
+    color: $color-text;
     
     max-width: 100%;
     box-sizing: border-box;
 
     @include tab {
       font-size: 1rem;
+      margin-bottom: 3rem;
     }
   }
 
   
   &__diagram {
-    max-width: 50rem;
+    max-width: 45rem;
     margin: 0 auto;
     width: 100%;
     
@@ -434,13 +435,17 @@
     align-items: center;
     width: 100%;
 
+    @include tab {
+      margin: 3rem 0;
+    }
+
     .arrow-item {
       width: 0;
       height: 0;
       
       border-left: 50px solid transparent;
       border-right: 50px solid transparent;
-      border-top: 50px solid #333;
+      border-top: 50px solid #999;
       display: block;
       margin-top: -12px;
 
@@ -448,38 +453,46 @@
         margin-top: 0;
       }
       &:nth-child(2) {
-        opacity: 0.7;
+        opacity: 1;
       }
       &:nth-child(3) {
-        opacity: 0.4;
+        opacity: 1;
+      }
+
+      @include sp {
+        border-left: 30px solid transparent;
+        border-right: 30px solid transparent;
+        border-top: 30px solid #999;
+
       }
     }
   }
 
-  
   &__link-area {
     margin-bottom: 4rem;
     text-align: center;
     width: 100%;
+
+    @include tab {
+      margin-bottom: 3rem;
+    }
   }
 
   &__link-text {
     font-size: 2rem;
     font-weight: bold;
-    color: #333;
+    color: $color-text;
 
     @include tab {
       font-size: 1.5rem;
     }
   }
 
-  
   &__cards {
     display: flex;
     justify-content: center;
     gap: 4rem; 
     width: 100%;
-    
     max-width: 100%;
 
     @include tab {
@@ -490,7 +503,6 @@
   }
 
   &__card {
-    
     flex: 0 1 31.25rem; 
     width: 100%;
     background-color: #fff;
@@ -501,12 +513,11 @@
 
     @include tab {
       flex: none;
-      max-width: 100%;
+      width: 90%;
     }
 
     &-img {
       width: 100%;
-      
       aspect-ratio: 4 / 3; 
       overflow: hidden;
       
@@ -537,16 +548,15 @@
       line-height: 1.4;
       justify-content: center;
 
-
       @include tab {
-        font-size: 1.1rem;
+        font-size: 1.2rem;
       }
     }
 
     &-text {
-      font-size: 0.95rem;
+      font-size: 1rem;
       line-height: 1.8;
-      color: #666;
+      color: $color-text;
     }
 
     &.is-dark {
@@ -599,7 +609,6 @@
 
 // works
 .p-works {
-
   padding: 7.5rem 0;
   background-color: #fff;
   
@@ -607,31 +616,29 @@
 
   @include tab {
     
-    padding: 5rem 0;
+    padding: 5.625rem 0;
   }
 
   &__inner {
-    
-    max-width: 75rem;
+    max-width: 56.25rem;
     margin-inline: auto;
     padding-inline: 1.25rem;
-    width: 90%;
   }
 
   &__header {
-    margin-bottom: 4rem;
-    text-align: left;
+    margin-bottom: 0 auto 4rem;
 
     @include tab {
       text-align: center;
+      margin-bottom: 3rem;
     }
   }
 
   &__eng {
-    font-family: "EB Garamond", serif;
+    font-family: $font-heading;
     font-size: 3.5rem;
     font-weight: bold;
-    color: #333;
+    color: $color-header;
 
     @include tab {
       font-size: 2.5rem;
@@ -641,7 +648,7 @@
   &__jp {
     font-size: 1.1rem;
     font-weight: bold;
-    color: #333;
+    color: $color-header;
   }
 
   
@@ -654,11 +661,9 @@
   &__track {
     display: flex;
     width: max-content;
-    
     animation: infinity-loop 40s linear infinite;
 
     &:hover {
-      
       animation-play-state: paused;
     }
   }
@@ -669,7 +674,6 @@
     padding-left: 2.5rem;
 
     @include tab {
-      
       gap: 1.25rem;
       padding-left: 1.25rem;
     }
@@ -677,21 +681,17 @@
 
   
   &__item {
-    
     width: 23.75rem;
     background-color: #fff;
-    
     box-shadow: none; 
     transition: transform 0.3s ease;
 
     @include tab {
-      
       width: 80vw;
       max-width: 20rem;
     }
 
     &:hover {
-      
       transform: translateY(-5px);
     }
 
@@ -713,7 +713,6 @@
         transition: transform 0.3s ease;
 
         &:hover {
-          
           transform: scale(1.05);
         }
       }
@@ -807,7 +806,6 @@
   }
 }
 
-
 @keyframes infinity-loop {
   0% {
     transform: translateX(0);
@@ -820,32 +818,33 @@
 
 // company
 .p-company {
-  
   padding: 0 0 7.5rem 0;
   background-color: #fff;
 
+  @include tab {
+    padding-bottom: 5.625rem;
+  }
+
   &__inner {
-    
-    width: 90%;
-    max-width: 75rem; // 1200px
+    max-width: 56.25rem;
     margin-inline: auto;
+    padding-inline: 1.125rem;
   }
 
   &__header {
-    margin-bottom: 5rem;
-    text-align: left;
+    margin-bottom: 4rem;
 
     @include tab {
       text-align: center;
-      margin-bottom: 3.5rem;
+      margin-bottom: 3rem;
     }
   }
 
   &__eng {
-    font-family: "EB Garamond", serif;
+    font-family: $font-heading;
     font-size: 3.5rem;
     font-weight: bold;
-    color: #333;
+    color: $color-header;
     line-height: 1;
 
     @include tab {
@@ -856,7 +855,7 @@
   &__jp {
     font-size: 1.1rem;
     font-weight: bold;
-    color: #333;
+    color: $color-header;
   }
 
  
@@ -871,59 +870,60 @@
       gap: 3rem;
     }
   }
-
   
   &__img {
     flex: 1;
-    width: 100%;
+    width: 45%;
+
+    @include tab {
+      width: 90%;
+    }
     
     img {
       width: 100%;
-      height: auto;
+      height: 100%;
       object-fit: cover;
-      
+      min-height: 25rem;
+
+      @include tab {
+        min-height: auto;
+      }
     }
   }
-
   
   &__body {
     flex: 1;
-    width: 100%;
+    width: 45%;
     text-align: left;
 
     @include tab {
       text-align: center;
+      width: 90%;
     }
   }
 
   &__title {
     font-size: 1.5rem;
     font-weight: bold;
-    color: #333;
+    color: $color-text;
     margin-bottom: 2rem;
     position: relative;
-    padding-bottom: 1.5rem;
-    
+    padding-bottom: 1rem;
     text-align: center;
-
 
     &::after {
       content: "";
       position: absolute;
       bottom: 0;
-      
       left: 50%;
-      
       transform: translateX(-50%);
-      
-      width: 6rem;
+      width: 7rem;
       height: 2px;
-      background-color: #333;
+      background-color: $color-text;
     }
 
     @include tab {
-      font-size: 1.6rem;
-      
+      font-size: 1.2rem;
       text-align: center;
     }
   }
@@ -931,7 +931,7 @@
   &__text {
     font-size: 1.1rem;
     line-height: 2; 
-    color: #333;
+    color: $color-text;
     text-align: justify; 
 
     @include tab {
@@ -940,7 +940,6 @@
     }
   }
 
-  
   &__more {
     margin-top: 5rem;
     text-align: center;
@@ -988,29 +987,27 @@
 
 // contact
 .p-contact {
-  
   width: 100%;
   padding: 4rem 0;
   background-image: url("../img/top-contact.jpg"); 
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  
 
+  @include tab {
+    padding: 3rem 0;
+  }
+  
   &__inner {
-    
-    width: 90%;
-    max-width: 87.5rem; 
+    max-width: 56.25rem; 
     margin-inline: auto;
+    padding-inline: 1.125rem;
   }
 
-  
   &__box {
     background-color: rgba(255, 255, 255, 0.85); 
     padding: 4rem 2rem;
     text-align: center;
-    
-    border: 1px solid rgba(255, 255, 255, 0.3);
 
     @include tab {
       padding: 2rem 1.5rem;
@@ -1018,14 +1015,18 @@
   }
 
   &__header {
-    margin-bottom: 3rem;
+    margin-bottom: 4rem;
+
+    @include tab {
+      margin-bottom: 3rem;
+    }
   }
 
   &__eng {
-    font-family: "EB Garamond", serif;
+    font-family: $font-heading;
     font-size: 3.5rem;
     font-weight: bold;
-    color: #000;
+    color: $color-header;
     line-height: 1;
 
     @include tab {
@@ -1036,11 +1037,15 @@
   &__jp {
     font-size: 1.1rem;
     font-weight: bold;
-    color: #000;
+    color: $color-header;
   }
 
   &__body {
     margin-bottom: 4rem;
+
+    @include tab {
+      margin-bottom: 3rem;
+    }
   }
 
   &__text {
@@ -1107,7 +1112,6 @@
         }
       }
 
-      
       i {
         font-size: 1.5rem;
         display: flex;
@@ -1120,8 +1124,8 @@
 
 .u-fade-up {
   opacity: 0;
-  transform: translateY(3rem); /* 48px分下に下げておく */
-  transition: opacity 1s, transform 1s; /* 1秒かけて変化 */
+  transform: translateY(3rem);
+  transition: opacity 1s, transform 1s; 
 }
 
 

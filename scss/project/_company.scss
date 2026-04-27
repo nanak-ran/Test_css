@@ -3,7 +3,7 @@
 
 // 共通 company service works
 .p-lower-header {
-  padding: 4rem 0 50px;
+  padding: 5rem 0 3rem;
   background-color: #fff;
 
   @include tab {
@@ -11,8 +11,8 @@
   }
 
   &__inner {
-    width: 90%;
-    max-width: 87.5rem;
+    max-width: 65.625rem;
+    padding-inline: 1.125rem;
     margin-inline: auto;
     display: flex;
     justify-content: space-between;
@@ -26,10 +26,10 @@
   }
 
   &__eng {
-    font-family: "EB Garamond", serif;
+    font-family: $font-heading;
     font-size: 4.5rem;
     font-weight: bold;
-    color: #000;
+    color: $color-header;
     line-height: 1;
 
     @include tab {
@@ -40,7 +40,7 @@
   &__jp {
     font-size: 1.1rem;
     font-weight: bold;
-    color: #000;
+    color: $color-header;
   }
 }
 
@@ -52,8 +52,7 @@
 
   &__img {
     width: 100%;
-
-    height: calc(100vh - 80px - 4rem - 50px - 6rem); 
+    height: calc(100vh - 6.25rem - 5rem - 3rem - 8rem); 
 
     @include tab {
       height: 60vh;
@@ -100,9 +99,8 @@
   }
 
   &__inner {
-    width: 90%;
-    max-width: 87.5rem; 
-    margin-inline: auto;
+    max-width: 56.25rem; 
+    margin: 0 auto;
   }
 
 
@@ -118,10 +116,10 @@
   }
 
   &__eng {
-    font-family: "EB Garamond", serif;
+    font-family: $font-heading;
     font-size: 3.5rem;
     font-weight: bold;
-    color: #000;
+    color: $color-header;
     line-height: 1;
 
     @include tab {
@@ -132,21 +130,25 @@
   &__jp {
     font-size: 1.1rem;
     font-weight: bold;
-    color: #000;
+    color: $color-header;
   }
 
 
-
   &__contents {
-    max-width: 75rem; // 1200px
-    margin-inline: auto;
+    max-width: 43.75rem;
+    padding-inline: 1.125rem;
     text-align: center;
+    margin: 0 auto;
   }
 
   &__img {
     width: 75%;
     margin-bottom: 4rem;
-    margin-inline: auto;
+    margin: 0 auto;
+
+    @include tab {
+      margin-bottom: 3rem;
+    }
 
     img {
       width: 100%;
@@ -155,7 +157,7 @@
   }
 
   &__body {
-    max-width: 50rem;
+    max-width: 43.75rem;
     margin-inline: auto;
     text-align: left;
   }
@@ -210,9 +212,9 @@
   }
 
   &__inner {
-    width: 90%;
-    max-width: 87.5rem;
+    max-width: 56.25rem;
     margin-inline: auto;
+    padding-inline: 1.125rem;
   }
 
   &__header {
@@ -226,10 +228,10 @@
   }
 
   &__eng {
-    font-family: "EB Garamond", serif;
+    font-family: $font-heading;
     font-size: 3.5rem;
     font-weight: bold;
-    color: #000;
+    color: $color-header;
     line-height: 1;
 
     @include tab {
@@ -240,12 +242,12 @@
   &__jp {
     font-size: 1.1rem;
     font-weight: bold;
-    color: #000;
+    color: $color-header;
   }
 
   
   &__contents {
-    max-width: 75rem;
+    max-width: 43.75rem;
     margin-inline: auto;
   }
 
@@ -299,9 +301,9 @@
   }
 
   &__inner {
-    width: 90%;
-    max-width: 87.5rem;
+    max-width: 56.25rem;
     margin-inline: auto;
+    padding-inline: 1.125rem;
   }
 
   &__header {
@@ -341,9 +343,10 @@
   &__lead {
     font-size: 1.1rem;
     line-height: 2;
-    color: #333;
-    margin-bottom: 4rem;
+    color: $color-text;
+    margin:0 auto 4rem;
     text-align: left;
+    max-width: 43.75rem;
 
     @include tab {
       font-size: 1rem;
@@ -352,7 +355,6 @@
   }
 
   
-
   &__list {
     display: grid;
     grid-template-columns: repeat(4, 1fr); 
@@ -381,7 +383,6 @@
       }
     }
   }
-
 
   &__img {
     width: 100%;
@@ -421,7 +422,6 @@
 }
 
 
-
 .p-access {
   padding-bottom: 7.5rem;
   background-color: #fff;
@@ -431,11 +431,10 @@
   }
 
   &__inner {
-    width: 90%;
-    max-width: 87.5rem; 
+    max-width: 56.25rem; 
     margin-inline: auto;
+    padding-inline: 1.125rem;
   }
-
 
   &__header {
     margin-bottom: 4rem;
@@ -466,7 +465,7 @@
 
   
   &__contents {
-    max-width: 75rem;
+    max-width: 56.25rem;
     margin-inline: auto;
   }
 
@@ -489,6 +488,12 @@
 
   
   &__info {
+
+    &-list {
+      max-width: 43.75rem;
+      text-align: left;
+      margin: 0 auto;
+    }
     &-item {
       display: flex; 
       font-size: 1.1rem;

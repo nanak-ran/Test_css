@@ -6,7 +6,7 @@
   background-color: #fff;
 
   &__inner {
-    max-width: 87.5rem; 
+    max-width: 65.625rem; 
     margin: 0 auto;
     padding-inline: 1.25rem;
     display: flex;
@@ -18,7 +18,6 @@
       flex-direction: column;
       align-items: flex-start;
       gap: 1.5rem;
-      padding-top: 4rem;
     }
   }
 
@@ -94,11 +93,16 @@
 
 
 .contact-section {
-  padding: 5rem 0 10rem;
+  padding: 7.5rem 0;
   background-color: #fff;
 
+  @include tab {
+    padding-top: 5.625rem;
+    padding-bottom: 3rem;
+  }
+
   &__inner {
-    max-width: 62.5rem; 
+    max-width: 56.25rem; 
     margin: 0 auto;
     padding-inline: 1.25rem;
     box-sizing: border-box;
