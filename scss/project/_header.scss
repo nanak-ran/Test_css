@@ -45,7 +45,7 @@
 
     &__nav-wrapper {
       @include flex;
-      gap: 2.19rem;
+      gap: 1.8rem;
       
       margin-left: auto; 
 
@@ -68,7 +68,7 @@
       display: none;
       @include tab {
         display: block;
-        margin-bottom: 3.13rem;
+        margin-bottom: 2rem;
         img {
           height: 3.13rem;
           width: auto;
@@ -78,7 +78,7 @@
 
     &__list {
       @include flex;
-      gap: 2.19rem;
+      gap: 1.8rem;
       @include tab {
         flex-direction: column;
         margin-bottom: 2.5rem;
@@ -90,7 +90,7 @@
         text-decoration: none;
         color: #333;
         font-weight: 400;
-        font-size: 1.2rem;
+        font-size: 1rem;
         position: relative;
         padding: 0.31rem 0;
         white-space: nowrap;

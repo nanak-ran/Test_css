@@ -1,7 +1,7 @@
 @charset "UTF-8";
 @use "../global" as *;
 
-$footer-inner-width: 56.25rem; 
+$footer-inner-width: 56.25rem;
 
 .footer {
   width: 100%;
@@ -9,18 +9,19 @@ $footer-inner-width: 56.25rem;
   &-wrap {
     @include flex(stretch);
     align-items: stretch;
+
     @include tab {
-      flex-direction: column-reverse; 
+      flex-direction: column-reverse;
     }
   }
 
-  
-
+  // --- 左側（会社情報エリア） ---
   &-left {
     width: 50%;
     background-color: #d9d9d9;
     padding: 6rem 0;
     @include flex(flex-end);
+
     @include tab {
       width: 100%;
       padding: 4rem 0;
@@ -29,14 +30,15 @@ $footer-inner-width: 56.25rem;
 
     &__inner {
       width: 100%;
-      max-width: calc(#{$footer-inner-width} / 2); 
-      padding-inline: 1.25rem; 
+      max-width: calc(#{$footer-inner-width} / 2);
+      padding-inline: 1.25rem;
+
       @include tab {
         padding-right: 1.25rem;
         max-width: 500px;
         display: flex;
         flex-direction: column;
-        align-items: center; 
+        align-items: center;
         text-align: center;
       }
     }
@@ -52,27 +54,51 @@ $footer-inner-width: 56.25rem;
       @include flex(flex-start);
       align-items: center;
       gap: 1.2rem;
-      @include tab { justify-content: center; }
 
-      .footer-logo img { height: 3.5rem; width: auto; }
-      .footer-company-name { font-weight: bold; font-size: 1rem; color: #333; }
+      @include tab {
+        justify-content: center;
+      }
+
+      .footer-logo img {
+        height: 3.5rem;
+        width: auto;
+      }
+
+      .footer-company-name {
+        font-weight: bold;
+        font-size: 1rem;
+        color: #333;
+      }
+
       .footer-sns {
         @include flex(flex-start);
         gap: 1.2rem;
         font-size: 1.5rem;
-        @include tab { justify-content: center; }
-        a { color: #333; transition: opacity 0.3s; &:hover { opacity: 0.7; } }
+
+        @include tab {
+          justify-content: center;
+        }
+
+        a {
+          color: #333;
+          transition: opacity 0.3s, color 0.3s;
+
+          &:hover {
+            opacity: 0.7;
+            color: #666;
+          }
+        }
       }
     }
   }
 
-  
-
+  // --- 右側（ナビゲーションエリア） ---
   &-right {
     width: 50%;
     background-color: #333;
     padding: 6rem 0;
     @include flex(flex-start);
+
     @include tab {
       width: 100%;
       padding: 4rem 0;
@@ -84,19 +110,21 @@ $footer-inner-width: 56.25rem;
       max-width: calc(#{$footer-inner-width} / 2);
       padding-inline: 1.25rem;
       padding-left: 4rem;
+
       @include tab {
         padding-left: 1.25rem;
         max-width: 500px;
         display: flex;
         flex-direction: column;
-        align-items: center; 
+        align-items: center;
       }
     }
 
     .footer-nav {
       @include flex(flex-start);
-      align-items: flex-start; 
-      gap: 4rem; 
+      align-items: flex-start;
+      gap: 4rem;
+
       @include tab {
         gap: 3rem;
         justify-content: center;
@@ -105,9 +133,10 @@ $footer-inner-width: 56.25rem;
       &__group {
         display: flex;
         flex-direction: column;
+
         @include tab {
           align-items: flex-start;
-          width: fit-content;      
+          width: fit-content;
         }
       }
 
@@ -118,10 +147,16 @@ $footer-inner-width: 56.25rem;
         margin-bottom: 1.8rem;
         font-size: 1rem;
         text-decoration: none;
-        
+        transition: color 0.3s;
+
+        &:hover {
+          color: #ccc;
+          text-decoration: none; 
+        }
+
         @include tab {
           .footer-nav__group:first-child & {
-            padding-left: 1.2rem; 
+            padding-left: 1.2rem;
           }
         }
       }
@@ -130,15 +165,28 @@ $footer-inner-width: 56.25rem;
         list-style: none;
         padding: 0;
         margin: 0;
+
         li {
           margin-bottom: 1.2rem;
-          a { color: #fff; text-decoration: none; font-size: 1rem; }
+
+          a {
+            color: #fff;
+            text-decoration: none; 
+            font-size: 1rem;
+            transition: color 0.3s;
+
+            &:hover {
+              color: #ccc;
+              text-decoration: none; 
+            }
+          }
         }
 
         &.--dot {
           li {
             position: relative;
-            padding-left: 1.2rem; 
+            padding-left: 1.2rem;
+
             &::before {
               content: "・";
               position: absolute;
@@ -151,6 +199,7 @@ $footer-inner-width: 56.25rem;
     }
   }
 
+  // --- コピーライト ---
   .copyright {
     background-color: #fff;
     color: #333;

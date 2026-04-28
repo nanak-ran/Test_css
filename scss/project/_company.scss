@@ -100,6 +100,7 @@
 
   &__inner {
     max-width: 56.25rem; 
+    padding-inline: 1.125rem;
     margin: 0 auto;
   }
 
@@ -165,13 +166,16 @@
   &__title {
     font-size: 1.75rem;
     font-weight: bold;
-    color: #333;
+    color: $color-text;
     margin-bottom: 3rem;
+    margin-top: 2rem;
     text-align: center;
     line-height: 1.5;
 
     @include tab {
       font-size: 1.4rem;
+      margin-top: 1rem;
+      margin-bottom: 1.5rem;
     }
 
     @include sp {
@@ -190,10 +194,10 @@
   }
 
   &__signature {
-    margin-top: 4rem;
+    margin-top: 2rem;
     font-size: 1.5rem;
     font-weight: bold;
-    color: #333;
+    color: $color-text;
     text-align: right;
 
     @include tab {
@@ -344,13 +348,13 @@
     font-size: 1.1rem;
     line-height: 2;
     color: $color-text;
-    margin:0 auto 4rem;
+    margin:0 0 4rem 0;
     text-align: left;
-    max-width: 43.75rem;
+    max-width: 56.25rem;
 
     @include tab {
       font-size: 1rem;
-      text-align: center;
+      margin: 0 0 3rem 0;
     }
   }
 
